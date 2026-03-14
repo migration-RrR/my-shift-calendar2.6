@@ -95,16 +95,18 @@ button:hover {
 .brigade-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  opacity: 0.5;
 }
 .brigade-btn:active {
   transform: scale(0.95);
+  opacity: 0.5;
 }
 
 /* Цвета кнопок бригад */
-.brigade-btn[data-brigade="A"] { background-color: rgba(241,196,15,0.8); color: #000; }
-.brigade-btn[data-brigade="B"] { background-color: rgba(52,152,219,0.8); color: #fff; }
-.brigade-btn[data-brigade="C"] { background-color: rgba(46,204,113,0.8); color: #fff; }
-.brigade-btn[data-brigade="D"] { background-color: rgba(231,76,60,0.8); color: #fff; }
+.brigade-btn[data-brigade="A"] { background-color: rgba(77,106,78); color: #fff; }
+.brigade-btn[data-brigade="B"] { background-color: rgba(77,106,78); color: #fff; }
+.brigade-btn[data-brigade="C"] { background-color: rgba(77,106,78); color: #fff; }
+.brigade-btn[data-brigade="D"] { background-color: rgba(77,106,78); color: #fff; }
 
 /* Легенда смен */
 .legend {
@@ -167,9 +169,9 @@ button:hover {
 }
 
 /* Цвета смен остаются видимыми на стекле */
-.day-cell.day { background: rgba(241,196,15,0.8); color: #000; }
-.day-cell.night { background: rgba(52,152,219,0.8); color: #fff; }
-.day-cell.rest, .day-cell.off { background: rgba(255,255,255,0.7); color: #000; border: 1px solid #ccc; }
+.day-cell.day { background: rgba(255,214,0); color: #000; }
+.day-cell.night { background: rgba(10,36,113); color: #fff; }
+.day-cell.rest, .day-cell.off { background: rgba(253,253,241); color: #000; border: 1px solid #ccc; }
 
 /* Текущий день */
 .day-cell.today { border: 2px solid #fff; animation: pulse 1.5s infinite; }
