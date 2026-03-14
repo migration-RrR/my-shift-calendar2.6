@@ -1,3 +1,4 @@
+
 /* Общие стили */
 body {
   background: #121212;
@@ -72,7 +73,6 @@ button:hover {
   gap: 15px;
 }
 
-/* Заголовок блока */
 .brigade-selection p {
   grid-column: 1 / -1;
   margin-bottom: 12px;
@@ -91,7 +91,6 @@ button:hover {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Анимация кнопок при наведении и клике */
 .brigade-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
@@ -103,10 +102,13 @@ button:hover {
 }
 
 /* Цвета кнопок бригад */
-.brigade-btn[data-brigade="A"] { background-color: rgba(77,106,78); color: #fff; }
-.brigade-btn[data-brigade="B"] { background-color: rgba(77,106,78); color: #fff; }
-.brigade-btn[data-brigade="C"] { background-color: rgba(77,106,78); color: #fff; }
-.brigade-btn[data-brigade="D"] { background-color: rgba(77,106,78); color: #fff; }
+.brigade-btn[data-brigade="A"],
+.brigade-btn[data-brigade="B"],
+.brigade-btn[data-brigade="C"],
+.brigade-btn[data-brigade="D"] {
+  background-color: rgba(77,106,78);
+  color: #fff;
+}
 
 /* Легенда смен */
 .legend {
@@ -122,16 +124,16 @@ button:hover {
 
 /* Месяцы */
 .month {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   background: rgba(40,40,40,0.3);
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  padding: 8px;
+  padding: 12px;
 }
 
 .month h2 {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 /* Дни недели */
@@ -140,10 +142,8 @@ button:hover {
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
   font-weight: bold;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
-
-.week-day { font-size: 14px; }
 
 /* Контейнер дней */
 .days-container {
@@ -160,6 +160,7 @@ button:hover {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   backdrop-filter: blur(8px);
+  position: relative;
 }
 
 /* Пустые дни */
@@ -168,7 +169,7 @@ button:hover {
   cursor: default;
 }
 
-/* Цвета смен остаются видимыми на стекле */
+/* Цвета смен */
 .day-cell.day { background: rgba(255,214,0); color: #000; }
 .day-cell.night { background: rgba(10,36,113); color: #fff; }
 .day-cell.rest, .day-cell.off { background: rgba(253,253,241); color: #000; border: 1px solid #ccc; }
@@ -202,6 +203,30 @@ button:hover {
 
 /* Яркое красное мигание выбранного дня */
 .day-cell.selected { animation: strongBlink 1s infinite; }
+
+/* Итоговые часы */
+.month-total{
+    margin-top: 14px;
+    margin-bottom: 30px;
+    padding: 12px 14px;
+    
+    font-size: 16px;
+    font-weight: 500;
+    color: #E0E0E0;
+    
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    
+    text-align: center;
+    
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.month-total strong{
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFD700;
+}
 
 /* Анимации */
 @keyframes pulse {
