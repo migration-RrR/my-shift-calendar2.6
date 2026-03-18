@@ -209,6 +209,29 @@ function showShiftAlert(){
   setTimeout(()=>alert.classList.remove("show"),4000);
 }
 
+// Переключение темы
+const themeBtn = document.getElementById("theme-toggle");
+
+// Проверяем сохранённую тему
+let savedTheme = localStorage.getItem("theme");
+if(savedTheme === "light"){
+  document.body.classList.add("light");
+}
+
+// Клик по кнопке для переключения темы
+if(themeBtn){
+  themeBtn.onclick = ()=>{
+    document.body.classList.toggle("light"); // переключаем класс
+
+    // Сохраняем выбранную тему
+    if(document.body.classList.contains("light")){
+      localStorage.setItem("theme","light");
+    } else {
+      localStorage.setItem("theme","dark");
+    }
+  };
+}
+
 // Service Worker
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 
