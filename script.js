@@ -39,13 +39,29 @@ if(activeBtn) activeBtn.classList.add("active");
 
 function getShift(date){
 
-const cycle = shiftCycle;
+const cycle = ["day","night","rest","off"];
+
+const base = new Date(2026,2,15);
+base.setHours(0,0,0,0);
+
 const d = new Date(date);
 d.setHours(0,0,0,0);
 
-const diff = Math.floor((d - baseDate) / 86400000);
+let diff = Math.floor((d - base) / 86400000);
 
-let index = (diff + brigadeOffsets[selectedBrigade]) % 4;
+/* ночная смена сдвигает цикл */
+if(diff > 0){
+diff = Math.floor(diff * 0.75);
+}
+
+const offsets = {
+A:3, // 2 бригада
+B:2, // 1 бригада
+C:1, // 4 бригада
+D:0  // 3 бригада
+};
+
+let index = (diff + offsets[selectedBrigade]) % 4;
 if(index < 0) index += 4;
 
 return cycle[index];
